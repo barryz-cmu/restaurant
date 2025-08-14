@@ -29,8 +29,15 @@ let currentCategory = '';
 
 // Group items by name to handle Small/Large variants
 const groupedItems = {};
+const categories = new Set(); // Collect unique categories
+
 menuItems.forEach(item => {
   if (!item.Item) return;
+  
+  // Collect categories for navigation
+  if (item.Category && item.Category.trim()) {
+    categories.add(item.Category.trim());
+  }
   
   // Only group items that have the same Category, Alias, Item name, and other properties except Size and Price
   const baseKey = `${item.Category}-${item.Alias}-${item.Item}-${item.Description}-${item.Main_Side}-${item.Combo_Side}`;
@@ -56,12 +63,25 @@ menuItems.forEach(item => {
   }
 });
 
+// Create navigation menu
+const categoryArray = Array.from(categories).sort();
+let navigationHtml = '<div class="navigation-menu">';
+navigationHtml += '<h3>Categories:</h3>';
+navigationHtml += '<div class="nav-links">';
+categoryArray.forEach(category => {
+  const anchorId = category.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+  navigationHtml += `<a href="#${anchorId}" class="nav-link">${category}</a>`;
+});
+navigationHtml += '</div>';
+navigationHtml += '</div>';
+
 Object.values(groupedItems).forEach(item => {
-  // Add category headers
+  // Add category headers with anchor IDs
   const itemCategory = item['Category'] || '';
   if (itemCategory && itemCategory.trim() !== currentCategory) {
     currentCategory = itemCategory.trim();
-    menuHtml += `<h2 class="category-header">${currentCategory}</h2>`;
+    const anchorId = currentCategory.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+    menuHtml += `<h2 class="category-header" id="${anchorId}">${currentCategory}</h2>`;
   }
   
   menuHtml += `<div class='menu-item' onclick="toggleDetails(this)">`;
@@ -191,8 +211,8 @@ const htmlContent = `<!DOCTYPE html>
       transition: transform 0.3s;
     }
     .item-details {
-      margin-top: 10px;
-      padding-top: 10px;
+      margin-top: 5px;
+      padding-top: 5px;
       border-top: 1px solid #eee;
     }
     .item-details label {
@@ -207,12 +227,53 @@ const htmlContent = `<!DOCTYPE html>
       border-bottom: 2px solid #333;
       padding-bottom: 5px;
       margin-top: 20px;
+      scroll-margin-top: 20px; /* Account for fixed navigation if any */
+    }
+    .navigation-menu {
+      background-color: #f8f9fa;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 15px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .navigation-menu h3 {
+      margin: 0 0 10px 0;
+      color: #333;
+      font-size: 1.1em;
+    }
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .nav-link {
+      background-color: #007bff;
+      color: white;
+      text-decoration: none;
+      padding: 8px 12px;
+      border-radius: 5px;
+      font-size: 0.9em;
+      transition: background-color 0.3s;
+    }
+    .nav-link:hover {
+      background-color: #0056b3;
+      text-decoration: none;
+    }
+    @media (max-width: 768px) {
+      .nav-links {
+        flex-direction: column;
+      }
+      .nav-link {
+        text-align: center;
+      }
     }
   </style>
 </head>
 <body>
   <h1>Asian Wok Menu</h1>
   <div id="menu-container">
+${navigationHtml}
 ${menuHtml}  </div>
   <script>
 function updatePrice(selectElement) {
