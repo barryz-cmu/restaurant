@@ -1,0 +1,260 @@
+﻿Category,Alias,Item,Size,Spicy,Description,Price,Main_Side,Combo_Side
+Appetizers,A1,Egg Roll ,,NO,1 piece with pork,2.65,NO,NO
+Appetizers,A2,Spring Roll,,NO,1 piece with shrimp,2.65,NO,NO
+Appetizers,A3,Vegetable Roll,,NO,1 piece,2.55,NO,NO
+Appetizers,A4,Chicken on Stick,,NO,4 pieces,9.5,NO,NO
+Appetizers,A4,Beef on the Stick ,,NO,4 pieces,10.45,NO,NO
+Appetizers,A5,Crispy Chicken Rangoon,,NO,6 pieces,6.95,NO,NO
+Appetizers,A6,French Fries,,NO,,3.95,NO,NO
+Appetizers,A6,Mozzarella Cheese Sticks ,,NO,6 pieces,5.25,NO,NO
+Appetizers,A7,Krab Rangoon,,NO,6 pieces,7.25,NO,NO
+Appetizers,A8,Fried Chicken Wings,,NO,6 pieces,7.95,NO,NO
+Appetizers,A9,Fried  Pork Dumplings,,NO,6 pieces ,7.25,NO,NO
+Appetizers,A9,Steamed Pork Dumplings,,NO,6 pieces ,7.25,NO,NO
+Appetizers,A10,Fried Wonton,,NO,8 pieces,6.25,NO,NO
+Appetizers,A11,Boneless Spare Ribs,,NO,,7.5,NO,NO
+Appetizers,A12,Shrimp Tempura,,NO,4 pieces,5.95,NO,NO
+Appetizers,A13,B.B.Q. Spare Ribs,,NO,4 pieces ,7.95,NO,NO
+Appetizers,A14,Pu Pu Platter,,NO,,16.95,NO,NO
+Appetizers,A15,Wonton in Hot Sauce,,YES,,5.25,NO,NO
+Appetizers,A16,Sesame Ball,,NO,6 pieces ,4.95,NO,NO
+Appetizers,A16,Cinnamon Churros,,NO,,4.95,NO,NO
+Appetizers,A17,Fish Sticks,,NO,6 pieces ,4.25,NO,NO
+Soup,S1,Wonton Soup,Small,NO,,3.45,NO,NO
+Soup,S1,Wonton Soup,Large,NO,,6.5,NO,NO
+Soup,S2,Egg Drop Soup,Small,NO,,3.45,NO,NO
+Soup,S2,Egg Drop Soup,Large,NO,,6.5,NO,NO
+Soup,S3,Hot and Sour Soup,Small,YES,,3.95,NO,NO
+Soup,S3,Hot and Sour Soup,Large,YES,,7.5,NO,NO
+Soup,S4,Chicken Corn Soup,Large,NO,,8.5,NO,NO
+Soup,S4,Chicken Noodle Soup,Large,NO,,8.5,NO,NO
+Soup,S4,Chicken Rice Soup,Large,NO,,8.5,NO,NO
+Soup,S5,Seafood and Tofu Soup,Large,NO,,8.95,NO,NO
+Soup,S6,Combination Wonton Soup,Large,NO,,8.95,NO,NO
+Soup,S7,Bean Curd Vegetable Soup,Large,NO,,7.95,NO,NO
+Fried Rice,FR1,Vegetable Fried Rice,Small,NO,,8.5,NO,NO
+Fried Rice,FR1,Vegetable Fried Rice,Large,NO,,10.75,NO,NO
+Fried Rice,FR2,Chicken Fried Rice,Small,NO,,8.75,NO,NO
+Fried Rice,FR2,Chicken Fried Rice,Large,NO,,11.25,NO,NO
+Fried Rice,FR3,Pork Fried Rice,Small,NO,,8.75,NO,NO
+Fried Rice,FR3,Pork Fried Rice,Large,NO,,11.25,NO,NO
+Fried Rice,FR4,Beef Fried Rice,Small,NO,,9.5,NO,NO
+Fried Rice,FR4,Beef Fried Rice,Large,NO,,11.75,NO,NO
+Fried Rice,FR5,Shrimp Fried Rice,Small,NO,,9.5,NO,NO
+Fried Rice,FR5,Shrimp Fried Rice,Large,NO,,11.75,NO,NO
+Fried Rice,FR6,Combination Fried Rice,Small,NO,,9.75,NO,NO
+Fried Rice,FR6,Combination Fried Rice,Large,NO,,11.95,NO,NO
+Lo Mein,LM1,Vegetable Lo Mein,Small,NO,,8.75,NO,NO
+Lo Mein,LM1,Vegetable Lo Mein,Large,NO,,10.95,NO,NO
+Lo Mein,LM2,Chicken Lo Mein,Small,NO,,9.5,NO,NO
+Lo Mein,LM2,Chicken Lo Mein,Large,NO,,11.75,NO,NO
+Lo Mein,LM3,Pork Lo Mein,Small,NO,,9.5,NO,NO
+Lo Mein,LM3,Pork Lo Mein,Large,NO,,11.75,NO,NO
+Lo Mein,LM4,Beef Lo Mein,Small,NO,,9.75,NO,NO
+Lo Mein,LM4,Beef Lo Mein,Large,NO,,12.5,NO,NO
+Lo Mein,LM5,Shrimp Lo Mein,Small,NO,,9.75,NO,NO
+Lo Mein,LM5,Shrimp Lo Mein,Large,NO,,12.5,NO,NO
+Lo Mein,LM6,Combination Lo Mein,Small,NO,,9.95,NO,NO
+Lo Mein,LM6,Combination Lo Mein,Large,NO,,12.95,NO,NO
+Lo Mein,LM7,Singapore Rice Noodles,Large,YES,,12.95,NO,NO
+Lo Mein,LM8,Taiwanese Rice Noodles,Large,NO,,12.95,NO,NO
+Pork,PK1,Mapo Tofu,Large,YES,,12.95,YES,NO
+Pork,PK2,Sweet and Sour Pork,Large,NO,,12.95,YES,NO
+Pork,PK3,Moo Shu Pork (w/pancakes),Large,NO,,12.95,YES,NO
+Pork,PK4,Hunan Pork,Large,YES,,12.95,YES,NO
+Pork,PK5,Pork w/String Beans,Large,NO,,12.95,YES,NO
+Pork,PK6,Roast Pork w/Broccoli,Large,NO,,12.95,YES,NO
+Pork,PK7,Shredded Pork w/Garlic Sauce,Large,YES,,12.95,YES,NO
+Egg Foo Young,EF1,Vegetable Egg Foo Young,Large,NO,,12.5,YES,NO
+Egg Foo Young,EF2,Chicken Egg Foo Young,Large,NO,,12.95,YES,NO
+Egg Foo Young,EF3,Pork Egg Foo Young,Large,NO,,12.95,YES,NO
+Egg Foo Young,EF4,Beef Egg Foo Young,Large,NO,,13.5,YES,NO
+Egg Foo Young,EF5,Shrimp Egg Foo Young,Large,NO,,13.5,YES,NO
+Egg Foo Young,EF6,Combination Egg Foo Young,Large,NO,,13.95,YES,NO
+Seafood,SF1,Shrimp w/Vegetables,Small,NO,,9.25,YES,NO
+Seafood,SF1,Shrimp w/Vegetables,Large,NO,,13.25,YES,NO
+Seafood,SF2,Shrimp w/Brocolli,Small,NO,,9.25,YES,NO
+Seafood,SF2,Shrimp w/Brocolli,Large,NO,,13.25,YES,NO
+Seafood,SF3,Cashew Shrimp,Small,NO,,9.25,YES,NO
+Seafood,SF3,Cashew Shrimp,Large,NO,,13.25,YES,NO
+Seafood,SF4,Kung Pao Shrimp,Small,YES,,9.25,YES,NO
+Seafood,SF4,Kung Pao Shrimp,Large,YES,,13.25,YES,NO
+Seafood,SF5,Szechuan Shrimp,Small,YES,,9.25,YES,NO
+Seafood,SF5,Szechuan Shrimp,Large,YES,,13.25,YES,NO
+Seafood,SF6,Sweet and Sour Shrimp,Small,NO,,9.25,YES,NO
+Seafood,SF6,Sweet and Sour Shrimp,Large,NO,,13.25,YES,NO
+Seafood,SF7,Shrimp w/Lobster Sauce,Small,NO,,9.25,YES,NO
+Seafood,SF7,Shrimp w/Lobster Sauce,Large,NO,,13.25,YES,NO
+Seafood,SF8,Shrimp w/Garlic Sauce,Small,YES,,9.25,YES,NO
+Seafood,SF8,Shrimp w/Garlic Sauce,Large,YES,,13.25,YES,NO
+Seafood,SF9,General Tso's Shrimp,Large,YES,,14.5,YES,NO
+Seafood,SF10,Sesame Shrimp,Large,NO,,14.5,YES,NO
+Seafood,SF11,Seafood Combination,Large,NO,,15.95,YES,NO
+Seafood,SF12,Curry Shrimp,Large,YES,,13.95,YES,NO
+Poultry,P1,Sweet and Sour Chicken,Small,NO,,9.5,YES,NO
+Poultry,P1,Sweet and Sour Chicken,Large,NO,,12.95,YES,NO
+Poultry,P2,Chicken w/Vegetables,Small,NO,,9.5,YES,NO
+Poultry,P2,Chicken w/Vegetables,Large,NO,,12.95,YES,NO
+Poultry,P3,Cashew Chicken,Small,NO,,9.5,YES,NO
+Poultry,P3,Cashew Chicken,Large,NO,,12.95,YES,NO
+Poultry,P4,Chicken w/Broccoli,Small,NO,,9.5,YES,NO
+Poultry,P4,Chicken w/Broccoli,Large,NO,,12.95,YES,NO
+Poultry,P5,Moo Goo Gai Pan,Small,NO,,12.95,YES,NO
+Poultry,P6,Kung Pao Chicken,Large,YES,,9.95,YES,NO
+Poultry,P6,Kung Pao Chicken,Small,YES,,12.95,YES,NO
+Poultry,P7,Hunan Chicken,Large,YES,,9.95,YES,NO
+Poultry,P7,Hunan Chicken,Small,YES,,12.95,YES,NO
+Poultry,P8,Chicken w/Garlic Sauce,Large,YES,,12.95,YES,NO
+Poultry,P9,Chicken w/Garlic Sauce,Small,YES,,12.95,YES,NO
+Poultry,P10,Moo Shu Chicken (w/pancakes),Large,NO,,12.95,YES,NO
+Poultry,P11,Honey Chicken,Small,NO,,9.95,YES,NO
+Poultry,P11,Honey Chicken,Large,NO,,12.95,YES,NO
+Poultry,P12,Bourbon Chicken,Small,NO,,9.95,YES,NO
+Poultry,P12,Bourbon Chicken,Large,NO,,12.95,YES,NO
+Poultry,P13,Orange Chicken,Small,YES,,9.95,YES,NO
+Poultry,P13,Orange Chicken,Large,YES,,12.95,YES,NO
+Poultry,P14,General Tso's Chicken,Small,YES,,9.95,YES,NO
+Poultry,P14,General Tso's Chicken,Large,YES,,12.95,YES,NO
+Poultry,P15,Sesame Chicken,Small,NO,,9.95,YES,NO
+Poultry,P15,Sesame Chicken,Large,NO,,12.95,YES,NO
+Beef,BF1,Beef w/Vegetables,Small,NO,,10.5,YES,NO
+Beef,BF1,Beef w/Vegetables,Large,NO,,13.95,YES,NO
+Beef,BF2,Beef w/Broccoli,Small,NO,,10.5,YES,NO
+Beef,BF2,Beef w/Broccoli,Large,NO,,13.95,YES,NO
+Beef,BF3,Mongolian Beef,Small,YES,,10.5,YES,NO
+Beef,BF3,Mongolian Beef,Large,YES,,13.95,YES,NO
+Beef,BF4,Pepper Steak w/Onions,Small,NO,,10.5,YES,NO
+Beef,BF4,Pepper Steak w/Onions,Large,NO,,13.95,YES,NO
+Beef,BF5,Hunan Beef,Small,YES,,11.5,YES,NO
+Beef,BF5,Hunan Beef,Large,YES,,13.95,YES,NO
+Beef,BF6,Beef w/String Beans,Small,NO,,11.5,YES,NO
+Beef,BF6,Beef w/String Beans,Large,NO,,13.95,YES,NO
+Beef,BF7,Szechuan Beef,Small,YES,,11.5,YES,NO
+Beef,BF7,Szechuan Beef,Large,YES,,13.95,YES,NO
+Beef,BF8,Beef w/Snow Peas,Large,NO,,13.95,YES,NO
+Beef,BF9,General Tso's Beef,Large,YES,,15.95,YES,NO
+Beef,BF10,Kung Pao Beef,Large,YES,,14.95,YES,NO
+Beef,BF11,Curry Beef,Large,YES,,14.95,YES,NO
+Chef's Special,SP1,Triple Delight,Large,NO,"Shrimp, Chicken, and Beef w/Vegetables in brown sauce.",14.95,YES,NO
+Chef's Special,SP2,Orange Beef,Large,YES,"Fried Beef w/dried spicy chili, scallions, and orange peels in a savory Mandarin style orange sauce.",15.95,YES,NO
+Chef's Special,SP3,Happy Family,Large,NO,"Shrimp, white meat chicken, beef, roasted pork, and one scallop stir-fried w/a variety of Chinese vegetables in a delicate brown sauce.",15.95,YES,NO
+Chef's Special,SP4,Dragon and Phoenix,Large,YES,Shrimp w/ Vegetables in white sauce & General Tso’s Chicken,13.95,YES,NO
+Chef's Special,SP5,Kung Pao Triple Delight,Large,YES,"HOT! Tender sliced beef, chicken & shrimp combined w/ red  pepper, green onions,& peanuts in a hot and spicy sauce.",14.95,YES,NO
+Chef's Special,SP6,Shrimp with Honey Glazed Walnuts,Large,YES,Wok seared jumbo shrimp with caramelized walnuts prepared in a delicate tomato sauce.,14.95,YES,NO
+Chef's Special,SP7,Beef and Scallops,Large,NO,"An exotic dish, comprised of tender slices of beef, scallops, broccoli, & water chestnuts n a special brown sauce.",15.95,YES,NO
+Chef's Special,SP8,Hunan Combination,Large,YES,"Sliced tender beef, chicken, & shrimp with fresh broccoli,  carrots, & mushrooms in spicy hot brown sauce.",14.95,YES,NO
+Chef's Special,SP9,Diced Crispy Chicken,Large,YES,Diced chicken slightly battered in chef’s special sauce.,13.5,YES,NO
+Chef's Special,SP10,Shrimp and Scallops in Garlic Sauce,Large,YES,,15.95,YES,NO
+Chef's Special,SP11,Creamy Butter Shrimp,Large,NO,Jumbo shrimp lightly fried then sautéed in creamy butter sauce.,14.95,YES,NO
+Chef's Special,SP12,Chef's Special Shrimp,Large,NO,Jumbo shrimp sautéed with broccoli in chef’s special sauce.,14.95,YES,NO
+Chef's Special,SP13,Spicy Shredded Beef,Large,YES,,15.95,YES,NO
+Chef's Special,SP14,General Tso's Delight,Large,YES,,14.95,YES,NO
+Chef's Special,SP15,Two Flavored Shrimp,Large,YES,"Shrimp w/Veg in white sauce and Royal Shrimp in a hot, spicy sauce.",14.95,YES,NO
+Combo,C1,General Tso's Chicken,,NO,,12.5,NO,YES
+Combo,C2,Orange Chicken,,NO,,12.5,NO,YES
+Combo,C3,Sesame Chicken,,NO,,12.5,NO,YES
+Combo,C4,Honey Chicken,,NO,,12.5,NO,YES
+Combo,C5,Hunan Chicken,,YES,,12.5,NO,YES
+Combo,C6,Bourbon Chicken,,NO,,12.5,NO,YES
+Combo,C7,Chicken Chow Mein,,NO,,12.5,NO,YES
+Combo,C8,Sweet and Sour Chicken,,NO,,12.5,NO,YES
+Combo,C9,Cashew Chicken,,NO,,12.5,NO,YES
+Combo,C10,Kung Pao Chicken,,YES,,12.5,NO,YES
+Combo,C11,Mixed Vegetables,,NO,,12.5,NO,YES
+Combo,C12,Chicken w/Vegetables,,NO,,12.5,NO,YES
+Combo,C12,Shrimp w/Vegetables,,NO,,12.5,NO,YES
+Combo,C13,Szechuan Chicken,,YES,,12.5,NO,YES
+Combo,C13,Szechuan Shrimp,,YES,,12.5,NO,YES
+Combo,C14,Chicken Wings,,NO,,12.5,NO,YES
+Combo,C15,Sweet and Sour Pork,,NO,,12.5,NO,YES
+Combo,C16,Pepper Chicken w/Onions,,NO,,12.5,NO,YES
+Combo,C16,Pepper Steak w/Onions,,NO,,12.5,NO,YES
+Combo,C17,Chicken w/Broccoli,,NO,,12.5,NO,YES
+Combo,C17,Beef w/Broccoli,,NO,,12.5,NO,YES
+Combo,C18,Mongolian Chicken,,YES,,12.5,NO,YES
+Combo,C18,Mongolian Beef,,YES,,12.5,NO,YES
+Combo,C19,Chicken w/Garlic Sauce,,YES,,12.5,NO,YES
+Combo,C19,Beef w/Garlic Sauce,,YES,,12.5,NO,YES
+Combo,C20,Pork Lo Mein,,NO,,12.5,NO,YES
+Combo,C20,Chicken Lo Mein,,NO,,12.5,NO,YES
+Combo,C21,Pork Egg Foo Young,,NO,,12.5,NO,YES
+Combo,C21,Chicken Egg Foo Young,,NO,,12.5,NO,YES
+Combo,C22,Curry Chicken,,YES,,12.5,NO,YES
+Combo,C23,Salt and Pepper Chicken,,YES,,12.5,NO,YES
+Combo,C24,Kung Pao Double Delight,,YES,Chicken and Shrimp,12.5,NO,YES
+Lunch,L1,General Tso's Chicken,,NO,,9.75,NO,YES
+Lunch,L2,Orange Chicken,,NO,,9.75,NO,YES
+Lunch,L3,Sesame Chicken,,NO,,9.75,NO,YES
+Lunch,L4,Honey Chicken,,NO,,9.75,NO,YES
+Lunch,L5,Hunan Chicken,,YES,,9.75,NO,YES
+Lunch,L6,Bourbon Chicken,,NO,,9.75,NO,YES
+Lunch,L7,Chicken Chow Mein,,NO,,9.75,NO,YES
+Lunch,L8,Sweet and Sour Chicken,,NO,,9.75,NO,YES
+Lunch,L9,Cashew Chicken,,NO,,9.75,NO,YES
+Lunch,L10,Kung Pao Chicken,,YES,,9.75,NO,YES
+Lunch,L11,Mixed Vegetables,,NO,,9.75,NO,YES
+Lunch,L12,Chicken w/Vegetables,,NO,,9.75,NO,YES
+Lunch,L12,Shrimp w/Vegetables,,NO,,9.75,NO,YES
+Lunch,L13,Szechuan Chicken,,YES,,9.75,NO,YES
+Lunch,L13,Szechuan Shrimp,,YES,,9.75,NO,YES
+Lunch,L14,Chicken Wings,,NO,,9.75,NO,YES
+Lunch,L15,Sweet and Sour Pork,,NO,,9.75,NO,YES
+Lunch,L16,Pepper Chicken w/Onions,,NO,,9.75,NO,YES
+Lunch,L16,Pepper Steak w/Onions,,NO,,9.75,NO,YES
+Lunch,L17,Chicken w/Broccoli,,NO,,9.75,NO,YES
+Lunch,L17,Beef w/Broccoli,,NO,,9.75,NO,YES
+Lunch,L18,Mongolian Chicken,,YES,,9.75,NO,YES
+Lunch,L18,Mongolian Beef,,YES,,9.75,NO,YES
+Lunch,L19,Chicken w/Garlic Sauce,,YES,,9.75,NO,YES
+Lunch,L19,Beef w/Garlic Sauce,,YES,,9.75,NO,YES
+Lunch,L20,Pork Lo Mein,,NO,,9.75,NO,YES
+Lunch,L20,Chicken Lo Mein,,NO,,9.75,NO,YES
+Lunch,L21,Pork Egg Foo Young,,NO,,9.75,NO,YES
+Lunch,L21,Chicken Egg Foo Young,,NO,,9.75,NO,YES
+Lunch,L22,Curry Chicken,,YES,,9.75,NO,YES
+Lunch,L23,Salt and Pepper Chicken,,YES,,9.75,NO,YES
+Lunch,L24,Kung Pao Double Delight,,YES,Chicken and Shrimp,9.75,NO,YES
+Special Chicken Wing Dishes,CW1,Chicken Wings (6) w/Vegetable Fried Rice,,NO,,11.95,NO,NO
+Special Chicken Wing Dishes,CW2,Chicken Wings (6) w/Chicken Fried Rice,,NO,,11.95,NO,NO
+Special Chicken Wing Dishes,CW3,Chicken Wings (6) w/Beef Fried Rice,,NO,,11.95,NO,NO
+Special Chicken Wing Dishes,CW4,Chicken Wings (6) w/Shrimp Fried Rice,,NO,,11.95,NO,NO
+Vegetables,V1,Mixed Vegetables,,NO,,6.95,YES,NO
+Vegetables,V1,Mixed Vegetables,,NO,,10.5,YES,NO
+Vegetables,V2,Hunan Vegetables,,YES,,6.95,YES,NO
+Vegetables,V2,Hunan Vegetables,,YES,,10.5,YES,NO
+Vegetables,V3,Broccoli w/Garlic Sauce,,YES,,6.95,YES,NO
+Vegetables,V3,Broccoli w/Garlic Sauce,,YES,,10.5,YES,NO
+Vegetables,V4,String Beans Szechuan Style,,YES,,6.95,YES,NO
+Vegetables,V4,String Beans Szechuan Style,,YES,,10.5,YES,NO
+Vegetables,V5,Fried Tofu w/Vegetables,,NO,,11.5,YES,NO
+Vegetables,V6,General Tso's Tofu,,YES,,11.5,YES,NO
+Vegetables,V7,Kung Pao Tofu,,YES,,11.5,YES,NO
+On The Light Side,ST1,Steamed Mixed Vegetables,,NO,,10.5,YES,NO
+On The Light Side,ST2,Steamed Chicken w/Vegetables,,NO,,12.95,YES,NO
+On The Light Side,ST3,Steamed Shrimp w/Vegetables,,NO,,13.25,YES,NO
+On The Light Side,ST4,Steamed Chicken and Shrimp w/Vegetables,,NO,,13.25,YES,NO
+Group Party Savings Menu,D4,Dinner for 4,,YES,"4 Egg Rolls, Sweet and Sour Chicken, Beef w/Broccoli, Pork Fried Rice, General Tso's Chicken",56.7,NO,NO
+Group Party Savings Menu,D5,Dinner for 5,,YES,"5 Egg Rolls, Sweet and Sour Chicken, Beef w/Broccoli, Pork Fried Rice, General Tso's Chicken, Mixed Vegetables",68.85,NO,NO
+Group Party Savings Menu,D6,Dinner for 6,,YES,"6 Egg Rolls, Sweet and Sour Chicken, Shrimp w/Broccoli, Pork Fried Rice, General Tso's Chicken, Mixed Vegetables, Pepper Steak w/Onions",83.75,NO,NO
+Group Party Savings Menu,D7,Dinner for 7,,YES,"7 Egg Rolls, Sweet and Sour Chicken, Shrimp w/Broccoli, Pork Fried Rice, General Tso's Chicken, Mixed Vegetables, Pepper Steak w/Onions, Combination Lo Mein",98.4,NO,NO
+Children's Menu,CN1,Chicken Tenders w/French Fries,,NO,,7.95,NO,NO
+Children's Menu,CN2,Chicken Wings (4)  w/French Fries,,NO,,7.95,NO,NO
+Children's Menu,CN3,Chicken Nuggets  w/French Fries,,NO,,7.95,NO,NO
+Children's Menu,CN4,Golden Shrimp  w/French Fries,,NO,,7.95,NO,NO
+Children's Menu,CN5,Fried Fish Sticks  w/French Fries,,NO,,7.95,NO,NO
+Desserts,D1,Fried Chinese Donuts,,NO,,5.5,NO,NO
+Chow Mein,CM1,Vegetable Chow Mein,Small,NO,,8.95,YES,NO
+Chow Mein,CM1,Vegetable Chow Mein,Large,NO,,10.95,YES,NO
+Chow Mein,CM1,Chicken Chow Mein,Small,NO,,9.45,YES,NO
+Chow Mein,CM2,Chicken Chow Mein,Large,NO,,11.95,YES,NO
+Chow Mein,CM3,Pork Chow Mein,Small,NO,,9.45,YES,NO
+Chow Mein,CM3,Pork Chow Mein,Large,NO,,11.95,YES,NO
+Chow Mein,CM4,Beef Chow Mein,Small,NO,,9.95,YES,NO
+Chow Mein,CM4,Beef Chow Mein,Large,NO,,12.5,YES,NO
+Chow Mein,CM5,Shrimp Chow Mein,Small,NO,,9.95,YES,NO
+Chow Mein,CM5,Shrimp Chow Mein,Large,NO,,12.5,YES,NO
+Chow Mein,CM6,Combination Chow Mein,Small,NO,,9.95,YES,NO
+Chow Mein,CM6,Combination Chow Mein,Large,NO,,12.95,YES,NO
+Wok,W1,Curry Chicken Wok,Large,YES,"Sliced chicken, snow peas, green peppers, onions,  carrots, and mushrooms in spicy curry sauce.",12.95,YES,NO
+Wok,W2,Special Szechuan Wok,Large,YES,"Jumbo shrimp, scallops, and sliced chicken w/vegetables in a spicy Szechuan sauce.",16.95,YES,NO
+Wok,W3,Seafood and Tofu Wok,Large,NO,"Jumbo shrimp, scallops, and tofu  w/vegetables in a delicate white sauce.",16.95,YES,NO
