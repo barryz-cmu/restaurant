@@ -73,39 +73,86 @@ Object.values(groupedItems).forEach(item => {
   if (item.Description) menuHtml += `    <p><i>${item.Description}</i></p>`;
 
   // Handle pricing - either single price or size-based pricing
+  const hasSides = (item.Main_Side || '').toUpperCase() === 'YES' || (item.Combo_Side || '').toUpperCase() === 'YES';
+  
   if (item.sizes.length > 0) {
     menuHtml += `    <label onclick="event.stopPropagation()">Size: <select onchange="updatePrice(this)" onclick="event.stopPropagation()">`;
     item.sizes.forEach((sizeInfo, index) => {
       const selected = index === 0 ? ' selected' : '';
-      menuHtml += `<option value='${sizeInfo.size}' data-price='${sizeInfo.price}'${selected}>${sizeInfo.size}</option>`;
+      const formattedPrice = parseFloat(sizeInfo.price).toFixed(2);
+      menuHtml += `<option value='${sizeInfo.size}' data-price='${formattedPrice}'${selected}>${sizeInfo.size}</option>`;
     });
     menuHtml += `</select></label><br/>`;
-    menuHtml += `    <p><strong>Price:</strong> $<span class="price">${item.sizes[0].price}</span></p>`;
+    
+    if (hasSides) {
+      menuHtml += `    <div class="price-display" style="display:none;"><strong>Base Price:</strong> $<span class="base-price">${parseFloat(item.sizes[0].price).toFixed(2)}</span></div>`;
+    }
   } else {
     if (item.Price || item.price) {
-      menuHtml += `    <p><strong>Price:</strong> $${item.Price || item.price}</p>`;
-    } else {
-      menuHtml += `    <p><strong>Price:</strong> <em>Ask</em></p>`;
+      if (hasSides) {
+        const formattedPrice = parseFloat(item.Price || item.price).toFixed(2);
+        menuHtml += `    <div class="price-display" style="display:none;"><strong>Base Price:</strong> $<span class="base-price">${formattedPrice}</span></div>`;
+      }
     }
   }
   
   if ((item.Main_Side || '').toUpperCase() === 'YES') {
-    menuHtml += `    <label onclick="event.stopPropagation()">Side: <select onclick="event.stopPropagation()">`;
-    mainSides.forEach(side => {
+    menuHtml += `    <label onclick="event.stopPropagation()">Side: <select onchange="updateTotalPrice(this)" onclick="event.stopPropagation()">`;
+    mainSides.forEach((side, index) => {
       if (side.Name && side.Price !== undefined) {
-        menuHtml += `<option value='${side.Name}'>${side.Name} ($${side.Price})</option>`;
+        const selected = index === 0 ? ' selected' : '';
+        const formattedSidePrice = parseFloat(side.Price).toFixed(2);
+        menuHtml += `<option value='${side.Name}' data-side-price='${formattedSidePrice}'${selected}>${side.Name} (+$${formattedSidePrice})</option>`;
       }
     });
     menuHtml += `</select></label><br/>`;
   }
   if ((item.Combo_Side || '').toUpperCase() === 'YES') {
-    menuHtml += `    <label onclick="event.stopPropagation()">Side: <select onclick="event.stopPropagation()">`;
-    comboSides.forEach(side => {
+    menuHtml += `    <label onclick="event.stopPropagation()">Side: <select onchange="updateTotalPrice(this)" onclick="event.stopPropagation()">`;
+    comboSides.forEach((side, index) => {
       if (side.Name && side.Price !== undefined) {
-        menuHtml += `<option value='${side.Name}'>${side.Name} ($${side.Price})</option>`;
+        const selected = index === 0 ? ' selected' : '';
+        const formattedSidePrice = parseFloat(side.Price).toFixed(2);
+        menuHtml += `<option value='${side.Name}' data-side-price='${formattedSidePrice}'${selected}>${side.Name} (+$${formattedSidePrice})</option>`;
       }
     });
     menuHtml += `</select></label><br/>`;
+  }
+  
+  // Display price based on whether item has sides or not
+  if (hasSides) {
+    // Calculate total price including default side
+    let basePrice = 0;
+    let sidePrice = 0;
+    
+    if (item.sizes.length > 0) {
+      basePrice = parseFloat(item.sizes[0].price);
+    } else if (item.Price || item.price) {
+      basePrice = parseFloat(item.Price || item.price);
+    }
+    
+    if ((item.Main_Side || '').toUpperCase() === 'YES' && mainSides.length > 0) {
+      sidePrice = parseFloat(mainSides[0].Price || 0);
+    } else if ((item.Combo_Side || '').toUpperCase() === 'YES' && comboSides.length > 0) {
+      sidePrice = parseFloat(comboSides[0].Price || 0);
+    }
+    
+    const totalPrice = basePrice + sidePrice;
+    
+    if (!isNaN(totalPrice)) {
+      menuHtml += `    <p><strong>Total:</strong> $<span class="price" data-base-price="${basePrice.toFixed(2)}">${totalPrice.toFixed(2)}</span></p>`;
+    }
+  } else {
+    // Simple price display for items without sides
+    if (item.sizes.length > 0) {
+      const initialPrice = parseFloat(item.sizes[0].price).toFixed(2);
+      menuHtml += `    <p><strong>Price:</strong> $<span class="price">${initialPrice}</span></p>`;
+    } else if (item.Price || item.price) {
+      const formattedPrice = parseFloat(item.Price || item.price).toFixed(2);
+      menuHtml += `    <p><strong>Price:</strong> $<span class="price">${formattedPrice}</span></p>`;
+    } else {
+      menuHtml += `    <p><strong>Price:</strong> <span class="price"><em>Ask</em></span></p>`;
+    }
   }
   menuHtml += `  </div>`; // Close item-details
   menuHtml += `</div>`; // Close menu-item
@@ -172,8 +219,60 @@ function updatePrice(selectElement) {
   const selectedOption = selectElement.options[selectElement.selectedIndex];
   const price = selectedOption.getAttribute('data-price');
   const priceSpan = selectElement.closest('.menu-item').querySelector('.price');
+  
   if (priceSpan && price) {
-    priceSpan.textContent = price;
+    // Check if this item has sides (has data-base-price attribute)
+    const basePrice = priceSpan.getAttribute('data-base-price');
+    if (basePrice) {
+      // Item has sides, update base price and recalculate total
+      priceSpan.setAttribute('data-base-price', price);
+      updateTotalPrice(selectElement);
+    } else {
+      // Item has no sides, just update the price
+      priceSpan.textContent = parseFloat(price).toFixed(2);
+    }
+  }
+}
+
+function updateTotalPrice(selectElement) {
+  const menuItem = selectElement.closest('.menu-item');
+  const priceSpan = menuItem.querySelector('.price');
+  
+  if (!priceSpan) return;
+  
+  // Get base price from data attribute or current price
+  let basePrice = 0;
+  const basePriceAttr = priceSpan.getAttribute('data-base-price');
+  if (basePriceAttr) {
+    basePrice = parseFloat(basePriceAttr);
+  } else {
+    // For size changes, get from the selected size option
+    const sizeSelect = menuItem.querySelector('select[onchange*="updatePrice"]');
+    if (sizeSelect) {
+      const selectedSizeOption = sizeSelect.options[sizeSelect.selectedIndex];
+      const sizePrice = selectedSizeOption.getAttribute('data-price');
+      if (sizePrice) {
+        basePrice = parseFloat(sizePrice);
+        priceSpan.setAttribute('data-base-price', sizePrice);
+      }
+    }
+  }
+  
+  // Get side price
+  let sidePrice = 0;
+  const sideSelects = menuItem.querySelectorAll('select[onchange*="updateTotalPrice"]');
+  sideSelects.forEach(select => {
+    const selectedOption = select.options[select.selectedIndex];
+    const sidePriceAttr = selectedOption.getAttribute('data-side-price');
+    if (sidePriceAttr) {
+      sidePrice += parseFloat(sidePriceAttr);
+    }
+  });
+  
+  // Calculate and display total
+  const totalPrice = basePrice + sidePrice;
+  if (!isNaN(totalPrice)) {
+    priceSpan.textContent = totalPrice.toFixed(2);
   }
 }
 
