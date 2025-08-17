@@ -1,4 +1,3 @@
-// Cart and Checkout Functionality
 let cart = [];
 const TAX_RATE = 0.08; // 8% tax rate - adjust as needed
 
@@ -150,7 +149,6 @@ function addToCart(item, size, sides, price) {
     }
     updateCartDisplay();
 }
-
 function removeFromCart(itemId) {
     cart = cart.filter(item => item.id !== itemId);
     updateCartDisplay();
@@ -167,7 +165,6 @@ function updateQuantity(itemId, change) {
         }
     }
 }
-
 function updateCartDisplay() {
     const cartItems = document.getElementById('cart-items');
     const cartCount = document.getElementById('cart-count');
@@ -227,7 +224,6 @@ function updateCartDisplay() {
     cartCount.textContent = totalQuantity;
     cartTotalDisplay.textContent = '$' + total.toFixed(2);
 }
-
 function calculateCartSubtotal() {
     return cart.reduce((subtotal, item) => subtotal + (item.price * item.quantity), 0);
 }
@@ -241,7 +237,6 @@ function calculateCartTotal() {
     const tax = calculateCartTax();
     return subtotal + tax;
 }
-
 function toggleCartDetails() {
     const cartDetails = document.getElementById('cart-details');
     const toggleIcon = document.querySelector('.cart-toggle-icon');
@@ -272,14 +267,14 @@ function toggleCheckout() {
 function generateConfirmationNumber() {
     const timestamp = Date.now().toString().slice(-6);
     const random = Math.floor(Math.random() * 1000).toString().padStart(3, '0');
-    return 'ORD' + timestamp + random;
+    return timestamp + random;
 }
 
 // Show confirmation page
 function showConfirmationPage(orderData) {
     const confirmationHtml = 
         '<div style="text-align: center; padding: 20px; background: #d4edda; border: 1px solid #c3e6cb; border-radius: 8px; margin: 20px; color: #155724;">' +
-            '<h2 style="margin: 0 0 15px 0; color: #155724;">🎉 Order Confirmed!</h2>' +
+            '<h2 style="margin: 0 0 15px 0; color: #155724;">🎉 Order Placed!</h2>' +
             '<div style="background: white; border: 2px solid #28a745; border-radius: 8px; padding: 15px; margin: 15px 0;">' +
                 '<h3 style="margin: 0 0 10px 0; color: #28a745;">Confirmation #' + orderData.confirmationNumber + '</h3>' +
                 '<p style="margin: 5px 0; font-weight: bold;">Customer: ' + orderData.name + '</p>' +
@@ -364,26 +359,12 @@ function handleCheckoutSubmit(event) {
     const subtotal = calculateCartSubtotal();
     const tax = calculateCartTax();
     const total = calculateCartTotal();
-    
-    // Create order data
-    const orderData = {
-        confirmationNumber: generateConfirmationNumber(),
-        name: name,
-        phone: phone, // Use the cleaned 10-digit phone number
-        items: [...cart],
-        subtotal: subtotal,
-        tax: tax,
-        total: total,
-        timestamp: new Date().toISOString()
-    };
-    
-    // Save order to localStorage for future reference
-    const savedOrders = JSON.parse(localStorage.getItem('restaurantOrders') || '[]');
-    savedOrders.push(orderData);
-    localStorage.setItem('restaurantOrders', JSON.stringify(savedOrders));
-    
+    const confirmationNumber = generateConfirmationNumber();
     // Show confirmation page
+    orderData = {
+        confirmationNumber: confirmationNumber,
+        name: name,
+        phone: phone,
+    };
     showConfirmationPage(orderData);
-    
-    console.log('Order confirmed:', orderData);
 }
