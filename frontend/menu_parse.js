@@ -192,8 +192,7 @@ Object.values(groupedItems).forEach(item => {
   menuHtml += `</div>`; // Close menu-item
 });
 
-// Insert menuHtml into menu.html at #menu-container (robust replacement)
-const htmlPath = path.join(__dirname, 'menu.html');
+const htmlPath = path.join(__dirname, 'index.html');
 const cssPath = path.join(__dirname, 'styles.css');
 
 // Create a fresh HTML template each run
