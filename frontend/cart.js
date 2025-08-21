@@ -263,22 +263,16 @@ function toggleCheckout() {
     }
 }
 
-// Generate confirmation number
-function generateConfirmationNumber() {
-    const timestamp = Date.now().toString().slice(-6);
-    const random = Math.floor(Math.random() * 1000).toString().padStart(3, '0');
-    return timestamp + random;
-}
-
 // Show confirmation page
 function showConfirmationPage(orderData) {
     const confirmationHtml = 
         '<div style="text-align: center; padding: 20px; background: #d4edda; border: 1px solid #c3e6cb; border-radius: 8px; margin: 20px; color: #155724;">' +
             '<h2 style="margin: 0 0 15px 0; color: #155724;">🎉 Order Placed!</h2>' +
             '<div style="background: white; border: 2px solid #28a745; border-radius: 8px; padding: 15px; margin: 15px 0;">' +
-                '<h3 style="margin: 0 0 10px 0; color: #28a745;">Confirmation #' + orderData.confirmationNumber + '</h3>' +
+                '<h3 style="margin: 0 0 10px 0; color: #28a745;">Confirmation #' + orderData.confirmation_number + '</h3>' +
                 '<p style="margin: 5px 0; font-weight: bold;">Customer: ' + orderData.name + '</p>' +
                 '<p style="margin: 5px 0;">Phone: ' + orderData.phone + '</p>' +
+                '<p style="margin: 5px 0; font-weight: bold;">Total: $' + orderData.total.toFixed(2) + '</p>' +
             '</div>' +
             '<button onclick="startNewOrder()" style="background: #007bff; color: white; border: none; padding: 12px 24px; border-radius: 6px; font-size: 16px; font-weight: bold; cursor: pointer; margin-top: 15px;">Start New Order</button>' +
         '</div>';
@@ -327,7 +321,7 @@ function startNewOrder() {
 }
 
 // Form submission handling
-function handleCheckoutSubmit(event) {
+async function handleCheckoutSubmit(event) {
     event.preventDefault();
     
     const form = document.getElementById('checkout-form');
@@ -335,7 +329,7 @@ function handleCheckoutSubmit(event) {
     const phoneInput = document.getElementById('phone');
     
     const name = nameInput.value.trim();
-    const phone = phoneInput.value.replace(/\D/g, ''); // Remove all non-digits
+    const phone = phoneInput.value.replace(/\D/g, ''); // Remove non-digits
     
     // Validation
     if (name.length < 2) {
@@ -355,16 +349,58 @@ function handleCheckoutSubmit(event) {
         return;
     }
     
-    // Calculate totals
-    const subtotal = calculateCartSubtotal();
-    const tax = calculateCartTax();
-    const total = calculateCartTotal();
-    const confirmationNumber = generateConfirmationNumber();
-    // Show confirmation page
-    orderData = {
-        confirmationNumber: confirmationNumber,
+    // Prepare order data for backend
+    const orderData = {
         name: name,
         phone: phone,
+        items: cart.map(item => ({
+            item: item.item,
+            size: item.size,
+            sides: item.sides,
+            price: item.price,
+            quantity: item.quantity
+        }))
     };
-    showConfirmationPage(orderData);
+    
+    const submitButton = form.querySelector('button[type="submit"]');
+    const originalText = submitButton.textContent; // Define before try
+
+    try {
+        submitButton.textContent = 'Submitting...';
+        submitButton.disabled = true;
+        
+        // Send order to backend
+        const response = await fetch('http://localhost:3000/api/orders', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(orderData)
+        });
+        
+        if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+        
+        const result = await response.json();
+        
+        // Use backend-generated total
+        const confirmationData = {
+            confirmation_number: result.confirmation_number,
+            orderId: result.orderId,
+            name: result.name || name,
+            phone: result.phone || phone,
+            total: result.total // <--- important
+        };
+        
+        showConfirmationPage(confirmationData);
+        console.log('Order confirmed:', confirmationData);
+        
+        // Clear cart
+        cart = [];
+        updateCartDisplay();
+        
+    } catch (error) {
+        console.error('Error submitting order:', error);
+        alert('Sorry, there was an error submitting your order. Please try again.');
+    } finally {
+        submitButton.textContent = originalText;
+        submitButton.disabled = false;
+    }
 }
