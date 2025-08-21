@@ -269,7 +269,7 @@ function showConfirmationPage(orderData) {
         '<div style="text-align: center; padding: 20px; background: #d4edda; border: 1px solid #c3e6cb; border-radius: 8px; margin: 20px; color: #155724;">' +
             '<h2 style="margin: 0 0 15px 0; color: #155724;">🎉 Order Placed!</h2>' +
             '<div style="background: white; border: 2px solid #28a745; border-radius: 8px; padding: 15px; margin: 15px 0;">' +
-                '<h3 style="margin: 0 0 10px 0; color: #28a745;">Confirmation #' + orderData.confirmation_number + '</h3>' +
+                '<h3 style="margin: 0 0 10px 0; color: #28a745;">Confirmation #: ' + orderData.confirmation_number + '</h3>' +
                 '<p style="margin: 5px 0; font-weight: bold;">Customer: ' + orderData.name + '</p>' +
                 '<p style="margin: 5px 0;">Phone: ' + orderData.phone + '</p>' +
                 '<p style="margin: 5px 0; font-weight: bold;">Total: $' + orderData.total.toFixed(2) + '</p>' +
